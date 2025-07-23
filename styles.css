@@ -246,7 +246,7 @@ body {
     background: var(--collection-white);
     border-radius: var(--collection-border-radius);
     box-shadow: var(--collection-shadow);
-    overflow: hidden;
+    overflow-x: auto;
 }
 
 .collection-section-header {
@@ -264,6 +264,7 @@ body {
 .collection-monthly-table {
     width: 100%;
     border-collapse: collapse;
+    overflow-x: auto;
 }
 
 .collection-monthly-table th,
@@ -311,7 +312,6 @@ body {
     background: var(--collection-white);
     border-radius: var(--collection-border-radius);
     box-shadow: var(--collection-shadow);
-    padding: 2rem;
     display: flex;
     flex-direction: column;
 }
@@ -324,7 +324,7 @@ body {
     height: 300px;
     width: 100%;
     gap: 8px;
-    padding: 1rem 0px;
+    padding: 1rem;
     background: linear-gradient(180deg, rgba(102, 126, 234, 0.05) 0%, transparent 100%);
     border-radius: 12px;
     margin-bottom: 1rem;
@@ -396,7 +396,7 @@ body {
     background: var(--collection-white);
     border-radius: var(--collection-border-radius);
     box-shadow: var(--collection-shadow);
-    overflow: hidden;
+    overflow-x: auto;
 }
 
 .collection-table-controls {
@@ -640,4 +640,12 @@ body {
 
 .collection-stat-card:nth-child(4) {
     animation-delay: 0.3s;
+}
+
+.collection-stat-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.collection-stat-card:nth-child(4) {
+    animation-delay: 0.5s;
 }

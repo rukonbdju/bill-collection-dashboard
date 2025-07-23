@@ -5,11 +5,6 @@ const collectionData = [
     { month: 'Apr', amount: 5600 },
     { month: 'May', amount: 5200 },
     { month: 'June', amount: 5200 },
-    { month: 'July', amount: 5200 },
-    { month: 'Aug', amount: 5200 },
-    { month: 'Sep', amount: 5200 },
-    { month: 'Oct', amount: 5200 },
-    { month: 'Dec', amount: 5200 },
 ];
 
 const chartArea = document.getElementById("collection-chart-area");
