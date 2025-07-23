@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bill Collection Management System</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <script src="collectionChart.js" defer></script>
+</head>
+
+<body>
+    <div class="collection-container">
+        <!-- Header -->
+        <header class="collection-header">
+            <div class="collection-header-content">
+                <h1>Bill Collection Management</h1>
+
+                <div class="collection-header-meta">
+                    <div class="collection-zone-display" id="currentDate">ZONE 1</div>
+                </div>
+            </div>
+        </header>
+
+        <!-- Dashboard Stats -->
+        <section class="collection-stats-grid">
+            <div class="collection-stat-card target">
+                <div class="collection-stat-header">
+                    <span class="collection-stat-title">Monthly Target</span>
+                    <div class="collection-stat-icon">🎯</div>
+                </div>
+                <div class="collection-stat-value">৳5,000</div>
+                <div class="collection-stat-change collection-positive">↗ 5% from last month</div>
+            </div>
+
+            <div class="collection-stat-card collection">
+                <div class="collection-stat-header">
+                    <span class="collection-stat-title">Total Collection</span>
+                    <div class="collection-stat-icon">💰</div>
+                </div>
+                <div class="collection-stat-value">৳4,200</div>
+                <div class="collection-stat-change collection-positive">↗ 12% from last month</div>
+            </div>
+
+            <div class="collection-stat-card commission">
+                <div class="collection-stat-header">
+                    <span class="collection-stat-title">Commission Earned</span>
+                    <div class="collection-stat-icon">💎</div>
+                </div>
+                <div class="collection-stat-value">৳840</div>
+                <div class="collection-stat-change collection-positive">↗ 8% from last month</div>
+            </div>
+
+            <div class="collection-stat-card pending">
+                <div class="collection-stat-header">
+                    <span class="collection-stat-title">Pending Amount</span>
+                    <div class="collection-stat-icon">⏳</div>
+                </div>
+                <div class="collection-stat-value">৳1,350</div>
+                <div class="collection-stat-change collection-negative">↘ 3% from last month</div>
+            </div>
+            <div class="collection-stat-card property">
+                <div class="collection-stat-header">
+                    <span class="collection-stat-title">Total Properties</span>
+                    <div class="collection-stat-icon">🏠</div>
+                </div>
+                <div class="collection-stat-value">40</div>
+            </div>
+
+            <div class="collection-stat-card pending-property">
+                <div class="collection-stat-header">
+                    <span class="collection-stat-title">Pending Properties</span>
+                    <div class="collection-stat-icon">⏳</div>
+                </div>
+                <div class="collection-stat-value">30</div>
+            </div>
+        </section>
+
+        <!-- Analytics Section -->
+        <section class="collection-analytics-section">
+            <div class="collection-monthly-table-container">
+                <div class="collection-section-header">
+                    <h2 class="collection-section-title">Monthly Performance</h2>
+                </div>
+                <table class="collection-monthly-table">
+                    <thead>
+                        <tr>
+                            <th>Month</th>
+                            <th>Target</th>
+                            <th>Collection</th>
+                            <th>Progress</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>January</td>
+                            <td>৳5,000</td>
+                            <td>৳4,200</td>
+                            <td class="collection-progress-cell">
+                                84%
+                                <div class="collection-progress-bar">
+                                    <div class="collection-progress-fill" style="width: 84%"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>February</td>
+                            <td>৳6,000</td>
+                            <td>৳4,800</td>
+                            <td class="collection-progress-cell">
+                                80%
+                                <div class="collection-progress-bar">
+                                    <div class="collection-progress-fill" style="width: 80%"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>March</td>
+                            <td>৳5,500</td>
+                            <td>৳5,100</td>
+                            <td class="collection-progress-cell">
+                                93%
+                                <div class="collection-progress-bar">
+                                    <div class="collection-progress-fill" style="width: 93%"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>April</td>
+                            <td>৳7,000</td>
+                            <td>৳5,600</td>
+                            <td class="collection-progress-cell">
+                                80%
+                                <div class="collection-progress-bar">
+                                    <div class="collection-progress-fill" style="width: 80%"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>May</td>
+                            <td>৳6,500</td>
+                            <td>৳5,200</td>
+                            <td class="collection-progress-cell">
+                                80%
+                                <div class="collection-progress-bar">
+                                    <div class="collection-progress-fill" style="width: 80%"></div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="collection-chart-container">
+                <div class="collection-section-header">
+                    <h2 class="collection-section-title">Collection Trend</h2>
+                </div>
+                <div class="collection-chart-area" id="collection-chart-area"></div>
+                <div class="collection-chart-labels" id="collection-chart-labels"></div>
+            </div>
+        </section>
+
+        <!-- Collection Table -->
+        <section class="collection-collection-table-container">
+            <div class="collection-section-header">
+                <h2 class="collection-section-title">Detailed Collection Records</h2>
+            </div>
+
+            <div class="collection-table-controls">
+                <div class="collection-search-box">
+                    <span class="collection-search-icon">🔍</span>
+                    <input type="text" class="collection-search-input" placeholder="Search by Property ID, Reference..."
+                        id="searchInput">
+                </div>
+                <div class="collection-filter-buttons">
+                    <button class="collection-filter-btn collection-active" data-filter="all">All</button>
+                    <button class="collection-filter-btn" data-filter="paid">Paid</button>
+                    <button class="collection-filter-btn" data-filter="partial">Partial</button>
+                    <button class="collection-filter-btn" data-filter="pending">Pending</button>
+                </div>
+            </div>
+
+            <table class="collection-collection-table" id="collectionTable">
+                <thead>
+                    <tr>
+                        <th>Date</th>
+                        <th>Property ID</th>
+                        <th>Reference Number</th>
+                        <th>Payment Method</th>
+                        <th>Generated Bill</th>
+                        <th>Collection Amount</th>
+                        <th>Remaining Due</th>
+                        <th>Status</th>
+                        <th>Remarks</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr data-status="paid">
+                        <td>Jan 12, 2025</td>
+                        <td>PRP-001</td>
+                        <td>REF-2025-001</td>
+                        <td>
+                            <div class="collection-payment-method">
+                                <span class="collection-method-icon method-online">💳</span>
+                                Online
+                            </div>
+                        </td>
+                        <td class="collection-amount-cell">৳250</td>
+                        <td class="collection-amount-cell">৳250</td>
+                        <td>৳0</td>
+                        <td><span class="collection-status-badge status-paid">Paid</span></td>
+                        <td>Paid on time via mobile banking</td>
+                    </tr>
+                    <tr data-status="partial">
+                        <td>Jan 15, 2025</td>
+                        <td>PRP-002</td>
+                        <td>REF-2025-002</td>
+                        <td>
+                            <div class="collection-payment-method">
+                                <span class="collection-method-icon method-cash">💵</span>
+                                Cash
+                            </div>
+                        </td>
+                        <td class="collection-amount-cell">৳400</td>
+                        <td class="collection-amount-cell">৳300</td>
+                        <td class="collection-due-amount">৳100</td>
+                        <td><span class="collection-status-badge status-partial">Partial</span></td>
+                        <td>Partial payment, balance due next week</td>
+                    </tr>
+                    <tr data-status="paid">
+                        <td>Jan 18, 2025</td>
+                        <td>PRP-003</td>
+                        <td>REF-2025-003</td>
+                        <td>
+                            <div class="collection-payment-method">
+                                <span class="collection-method-icon method-cheque">📄</span>
+                                Cheque
+                            </div>
+                        </td>
+                        <td class="collection-amount-cell">৳600</td>
+                        <td class="collection-amount-cell">৳600</td>
+                        <td>৳0</td>
+                        <td><span class="collection-status-badge status-paid">Paid</span></td>
+                        <td>Cheque cleared successfully</td>
+                    </tr>
+                    <tr data-status="paid">
+                        <td>Jan 22, 2025</td>
+                        <td>PRP-004</td>
+                        <td>REF-2025-004</td>
+                        <td>
+                            <div class="collection-payment-method">
+                                <span class="collection-method-icon method-card">💳</span>
+                                Card
+                            </div>
+                        </td>
+                        <td class="collection-amount-cell">৳350</td>
+                        <td class="collection-amount-cell">৳350</td>
+                        <td>৳0</td>
+                        <td><span class="collection-status-badge status-paid">Paid</span></td>
+                        <td>Credit card payment processed</td>
+                    </tr>
+                    <tr data-status="pending">
+                        <td>Jan 25, 2025</td>
+                        <td>PRP-005</td>
+                        <td>REF-2025-005</td>
+                        <td>
+                            <div class="collection-payment-method">
+                                <span class="collection-method-icon method-online">💳</span>
+                                Online
+                            </div>
+                        </td>
+                        <td class="collection-amount-cell">৳450</td>
+                        <td class="collection-amount-cell">৳0</td>
+                        <td class="collection-due-amount">৳450</td>
+                        <td><span class="collection-status-badge status-pending">Pending</span></td>
+                        <td>Payment pending, follow-up required</td>
+                    </tr>
+                    <tr data-status="paid">
+                        <td>Jan 28, 2025</td>
+                        <td>PRP-006</td>
+                        <td>REF-2025-006</td>
+                        <td>
+                            <div class="collection-payment-method">
+                                <span class="collection-method-icon method-cash">💵</span>
+                                Cash
+                            </div>
+                        </td>
+                        <td class="collection-amount-cell">৳300</td>
+                        <td class="collection-amount-cell">৳300</td>
+                        <td>৳0</td>
+                        <td><span class="collection-status-badge status-paid">Paid</span></td>
+                        <td>Cash collection completed</td>
+                    </tr>
+                    <tr data-status="partial">
+                        <td>Jan 30, 2025</td>
+                        <td>PRP-007</td>
+                        <td>REF-2025-007</td>
+                        <td>
+                            <div class="collection-payment-method">
+                                <span class="collection-method-icon method-online">💳</span>
+                                Online
+                            </div>
+                        </td>
+                        <td class="collection-amount-cell">৳500</td>
+                        <td class="collection-amount-cell">৳200</td>
+                        <td class="collection-due-amount">৳300</td>
+                        <td><span class="collection-status-badge status-partial">Partial</span></td>
+                        <td>Installment payment plan agreed</td>
+                    </tr>
+                    <tr data-status="pending">
+                        <td>Feb 02, 2025</td>
+                        <td>PRP-008</td>
+                        <td>REF-2025-008</td>
+                        <td>
+                            <div class="collection-payment-method">
+                                <span class="collection-method-icon method-cheque">📄</span>
+                                Cheque
+                            </div>
+                        </td>
+                        <td class="collection-amount-cell">৳750</td>
+                        <td class="collection-amount-cell">৳0</td>
+                        <t
